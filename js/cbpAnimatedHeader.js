@@ -13,7 +13,8 @@ var cbpAnimatedHeader = (function() {
 	var docElem = document.documentElement,
 		header = document.querySelector( '.navbar-default' ),
 		didScroll = false,
-		changeHeaderOn = 300;
+		changeHeaderOn = 1;
+		// adjusted changeHeaderOn to trigger solid colored navbar when first header hits the field
 
 	function init() {
 		window.addEventListener( 'scroll', function( event ) {
