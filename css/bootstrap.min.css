@@ -249,9 +249,11 @@ td,th{
 		color:#333;
 		background-color:#fff;
 	}
-	button,input,select,textarea{
+	textarea{
 		resize: none;
 		overflow-y: scroll;
+	}
+	button,input,select,textarea{
 		font-family:inherit;
 		font-size:inherit;
 		line-height:inherit;
