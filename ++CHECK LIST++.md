@@ -1,16 +1,16 @@
 ++CHECK LIST++
 ___ - add most recent posts to social media boxes
-___ - add links to all social media icons
+_X_ - add links to all social media icons
 	___ - all of the posts should be click able and lead back to their url
 ___ - make appearance of social media.Facebook appear the same as the others when screen gets smaller
 ___ - Add jQuery to make COMING SOON div display when hovering on #hobbies div
 ___ - Set up Git Repos:
-	___ - personal site
+	_X_ - personal site
 	___ - Arduino Morse Code Project
 	___ - Audio Files
-___ - add same COMING SOON to portfolio projects: Road Less Traveled and DACM
+_X_ - add same COMING SOON to portfolio projects: Road Less Traveled and DACM
 ___ - add #portfolio.modals for all ready projects WITH link to git REPO added
-___ - compile TIMELINE data
+___ - compile TIMELINE data, use FB -> about -> Life Events 
 ___ - Green Node needs to go on top and when clicked send you to the TOUCH section
 _X_ - fix the Touch contact form to always be stacked and centered
 ___ - re-MINIFY source files (expect several hours and check content stability REGULARLY)
