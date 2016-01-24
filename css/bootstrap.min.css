@@ -250,6 +250,8 @@ td,th{
 		background-color:#fff;
 	}
 	button,input,select,textarea{
+		resize: none;
+		overflow-y: scroll;
 		font-family:inherit;
 		font-size:inherit;
 		line-height:inherit;

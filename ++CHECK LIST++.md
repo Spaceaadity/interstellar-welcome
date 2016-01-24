@@ -12,7 +12,7 @@ ___ - add same COMING SOON to portfolio projects: Road Less Traveled and DACM
 ___ - add #portfolio.modals for all ready projects WITH link to git REPO added
 ___ - compile TIMELINE data
 ___ - Green Node needs to go on top and when clicked send you to the TOUCH section
-___ - fix the Touch contact form to always be stacked and centered
+_X_ - fix the Touch contact form to always be stacked and centered
 ___ - re-MINIFY source files (expect several hours and check content stability REGULARLY)
 ___ - Spell CHECK!!!!
 ___ - Second SPELL CHECK!!!
