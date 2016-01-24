@@ -3,6 +3,15 @@
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
+ $(document).ready(function() {
+ 	//https://api.twitter.com/1/statuses/user_timeline/chriscoyier.json?count=1&include_rts=1&callback=?
+ 	$.get("https://api.twitter.com/1.1/statuses/user_timeline/spaceaadity.json?count=1&trim_user=true&exclude_replies=true"), function(stuff){
+ 		var data="";
+ 		data += stuff.id_str;
+ 		console.log(data);
+ 	}
+
+ });
 
 // jQuery for page scrolling feature - requires jQuery Easing plugin
 $(function() {
