@@ -42,13 +42,9 @@ body{
     	#cccccc,
     	white);
 	}
-	/*#hobbies.bg-light-gray {
-		background-image: linear-gradient(
-		180deg,
-    	#cccccc,
-    	white);*/
-		/*light green-grey*/
-	/*}*/
+	#hobbies p{
+		text-align: justify;
+	}
 	.bg-darkest-gray{
 		background-color:#151214;
 	}
@@ -292,6 +288,13 @@ section{
 		position:relative;
 		max-width:400px;
 		margin:0 auto;
+	}
+	#hobbies .hobbies-hover{
+		padding-top: 5em;
+		color: white;
+	}
+	#hobbies:hover .hobbies-hover{
+		color: black;
 	}
 	#portfolio .portfolio-item .portfolio-link .portfolio-hover{
 		background:#715d66;
