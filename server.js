@@ -28,6 +28,6 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response){
 	response.render('index');
 });
-app.listen(8000, function(){
-	console.log("Channel 8000 open for communication Captain.");
+app.listen(80, function(){
+	console.log("Channel 80 open for communication Captain.");
 });
