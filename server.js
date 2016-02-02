@@ -1,7 +1,18 @@
-var express = require('express');
+var express = require('express')
+	, app = express()
+	, port = process.env.PORT || 3000;
 var path = require('path');
 var bodyParser = require('body-parser');
-var app = express();
+app.use(bodyParser.json());
+app.use(express.static(path.join(__dirname, './static')));
+app.set('views', path.join(__dirname, './views'));
+app.set('view engine', 'ejs');
+app.get('/', function(request, response){
+	response.render('index');
+});
+app.listen(port, function(){
+	console.log("Channel "+port+" open for communication Captain.");
+});
 // var Twitter = require('twitter');
 // var tweet = new Twitter({
 //   consumer_key: '',
@@ -21,13 +32,3 @@ var app = express();
 // 		// });
 // 	};
 // });
-app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, './static')));
-app.set('views', path.join(__dirname, './views'));
-app.set('view engine', 'ejs');
-app.get('/', function(request, response){
-	response.render('index');
-});
-app.listen(8000, function(){
-	console.log("Channel 8000 open for communication Captain.");
-});
