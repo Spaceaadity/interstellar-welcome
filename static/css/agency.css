@@ -704,6 +704,14 @@ footer{
 		opacity:0;
 		display:none;
 	}
+
+	div.dialog {
+		width: 75%;
+		padding-top: 175px;
+		text-align:center;
+		color: white;
+		margin: auto;
+	}
 ::-moz-selection{
 	text-shadow:none;
 	background:#5fa822;

@@ -10,6 +10,9 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response){
 	response.render('index');
 });
+app.post('/', function(request, response){
+	console.log('reached post');
+})
 app.listen(port, function(){
 	console.log("Channel "+port+" open for communication Captain.");
 });
