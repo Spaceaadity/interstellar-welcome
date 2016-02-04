@@ -19,7 +19,7 @@ $(function() {
             }
             $.ajax({
                 // url: "././mail/contact_me.php",
-                url: "./server.js"
+                url: "./server.js",
                 type: "POST",
                 data: {
                     name: name,
