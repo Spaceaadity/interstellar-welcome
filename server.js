@@ -1,6 +1,7 @@
 var express = require('express')
 	, app = express()
-	, port = process.env.PORT || 3000;
+	, port = process.env.PORT || 3000
+	, nodemailer = require('nodemailer');
 var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -10,7 +11,7 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response){
 	response.render('index');
 });
-app.post('/', function(request, response){
+app.post('/contact', function(request, response){
 	console.log('reached post');
 })
 app.listen(port, function(){
