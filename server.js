@@ -21,23 +21,23 @@ app.post('/contact', function(request, response){
 	var mailOpts,
 		transporter;
 
-	transporter = nodemailer.createTransport(smtpTransport({
-		service: 'gmail'
-		auth: {
-			user: 'aadi.nickels@gmail.com',
-			pass: 'B@11w00d'
-		}
-	}));
 	// transporter = nodemailer.createTransport(smtpTransport({
-	// 	service: 'ses',
-	// 	// host: "email-smtp.us-east-1.amazonaws.com",
-	// 	port: 465,
-	// 	// secure: true,
+	// 	service: 'gmail',
 	// 	auth: {
 	// 		user: '',
 	// 		pass: ''
 	// 	}
 	// }));
+	transporter = nodemailer.createTransport(smtpTransport({
+		service: 'ses',
+		// host: "email-smtp.us-east-1.amazonaws.com",
+		port: 465,
+		// secure: true,
+		auth: {
+			user: 'AKIAISKNG3VZXGJPGDQQ',
+			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
+		}
+	}));
 
 	mailOpts = {
 		from: email,
@@ -46,14 +46,14 @@ app.post('/contact', function(request, response){
 		text: message,
 	};
 
-	.sendMail(mailOpts, function(error, response){
-		console.log(mailOpts);
+	transporter.sendMail(mailOpts, function(error, res){
+		// console.log(mailOpts);
 		if(error){
-			// console.log(error);
-			response.send(false);
+			console.log(error);
+			return false
 		} else {
-			// console.log(success);
-			response.send(true);
+			console.log(success);
+			return true;
 		}
 	});
 
