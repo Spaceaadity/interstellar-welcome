@@ -29,8 +29,8 @@ app.post('/contact', function(request, response){
 		port: 465,
 		secure: true,
 		auth: {
-			user: 'AKIAISKNG3VZXGJPGDQQ',
-			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
+			user: '',
+			pass: ''
 		}
 	}));
 
