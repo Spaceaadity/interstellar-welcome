@@ -12,44 +12,44 @@ app.set('view engine', 'ejs');
 app.get('/', function(request, response){
 	response.render('index');
 });
-app.post('/contact', function(request, response){
-	// console.log(request.body);
-	var name = request.body.name;
-	var email = request.body.email;
-	var message = request.body.message;
+// app.post('/contact', function(request, response){
+// 	// console.log(request.body);
+// 	var name = request.body.name;
+// 	var email = request.body.email;
+// 	var message = request.body.message;
 
-	var mailOpts,
-		transporter;
+// 	var mailOpts,
+// 		transporter;
 
-	transporter = nodemailer.createTransport(smtpTransport({
-		service: 'ses',
-		host: "email-smtp.us-east-1.amazonaws.com",
-		port: 465,
-		secure: true,
-		auth: {
-			user: '',
-			pass: ''
-		}
-	}));
+// 	transporter = nodemailer.createTransport(smtpTransport({
+// 		service: 'ses',
+// 		host: "email-smtp.us-east-1.amazonaws.com",
+// 		port: 465,
+// 		secure: true,
+// 		auth: {
+// 			user: '',
+// 			pass: ''
+// 		}
+// 	}));
 
-	mailOpts = {
-		from: name+"<"+email+">",
-		to: 'aadi.nickels@gmail.com',
-		text: message,
-	};
+// 	mailOpts = {
+// 		from: name+"<"+email+">",
+// 		to: 'aadi.nickels@gmail.com',
+// 		text: message,
+// 	};
 
-	transporter.sendMail(mailOpts, function(error, response){
-		console.log(mailOpts);
-		if(error){
-			console.log(error);
-			// response.send(false);
-		} else {
-			console.log(success);
-			// response.send(true);
-		}
-	});
+// 	transporter.sendMail(mailOpts, function(error, response){
+// 		console.log(mailOpts);
+// 		if(error){
+// 			console.log(error);
+// 			// response.send(false);
+// 		} else {
+// 			console.log(success);
+// 			// response.send(true);
+// 		}
+// 	});
 
-})
+// })
 app.listen(port, function(){
 	console.log("Channel "+port+" open for communication Captain.");
 });
