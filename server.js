@@ -41,11 +41,11 @@ app.post('/contact', function(request, response){
 	transporter.sendMail(mailOpts, function(error, response){
 		console.log(mailOpts);
 		if(error){
-			console.log(error);
-			// response.send(false);
+			// console.log(error);
+			response.send(false);
 		} else {
-			console.log(success);
-			// response.send(true);
+			// console.log(success);
+			response.send(true);
 		}
 	});
 
