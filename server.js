@@ -34,8 +34,8 @@ app.post('/contact', function(request, response){
 		port: 465,
 		// secure: true,
 		auth: {
-			user: '',
-			pass: ''
+			user: 'AKIAISKNG3VZXGJPGDQQ',
+			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
 		}
 	}));
 
@@ -46,14 +46,16 @@ app.post('/contact', function(request, response){
 		text: message,
 	};
 
-	transporter.sendMail(mailOpts, function(error, res){
+	transporter.sendMail(mailOpts, function(error, response){
 		// console.log(mailOpts);
 		if(error){
-			console.log(error);
-			return false
+			// console.log(error);
+			// return false;
+			response.end('error');
 		} else {
-			console.log(success);
-			return true;
+			// console.log(success);
+			// return true;
+			response.end('success');
 		}
 	});
 
