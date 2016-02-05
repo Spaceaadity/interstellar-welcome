@@ -23,9 +23,9 @@ app.post('/contact', function(request, response){
 
 	transporter = nodemailer.createTransport(smtpTransport({
 		service: 'ses',
-		host: "email-smtp.us-east-1.amazonaws.com",
-		port: 465,
-		secure: true,
+		// host: "email-smtp.us-east-1.amazonaws.com",
+		// port: 465,
+		// secure: true,
 		auth: {
 			user: 'AKIAISKNG3VZXGJPGDQQ',
 			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
