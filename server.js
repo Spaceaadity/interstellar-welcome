@@ -29,13 +29,12 @@ app.post('/contact', function(request, response){
 	// 	}
 	// }));
 	transporter = nodemailer.createTransport(smtpTransport({
-		service: 'ses',
-		// host: "email-smtp.us-east-1.amazonaws.com",
+		host: "email-smtp.us-west-2.amazonaws.com",
 		port: 465,
 		// secure: true,
 		auth: {
-			user: '',
-			pass: ''
+			user: 'AKIAISKNG3VZXGJPGDQQ',
+			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
 		}
 	}));
 
@@ -50,12 +49,12 @@ app.post('/contact', function(request, response){
 		// console.log(mailOpts);
 		if(error){
 			// console.log(error);
-			// return false;
-			response.end('error');
+			return false;
+			// response.end('error');
 		} else {
 			// console.log(success);
-			// return true;
-			response.end('success');
+			return true;
+			// response.end('success');
 		}
 	});
 
