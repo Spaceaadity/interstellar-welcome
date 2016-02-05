@@ -1,7 +1,8 @@
 var express = require('express')
 	, app = express()
 	, port = process.env.PORT || 3000
-	, nodemailer = require('nodemailer');
+	, nodemailer = require('nodemailer')
+	, smtpTransport = require('nodemailer-smtp-transport');
 var path = require('path');
 var bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -12,7 +13,42 @@ app.get('/', function(request, response){
 	response.render('index');
 });
 app.post('/contact', function(request, response){
-	console.log('reached post');
+	// console.log(request.body);
+	var name = request.body.name;
+	var email = request.body.email;
+	var message = request.body.message;
+
+	var mailOpts,
+		transporter;
+
+	transporter = nodemailer.createTransport(smtpTransport({
+		service: 'ses',
+		host: "email-smtp.us-east-1.amazonaws.com",
+		port: 465,
+		secure: true,
+		auth: {
+			user: '',
+			pass: ''
+		}
+	}));
+
+	mailOpts = {
+		from: name+"<"+email+">",
+		to: 'aadi.nickels@gmail.com',
+		text: message,
+	};
+
+	transporter.sendMail(mailOpts, function(error, response){
+		console.log(mailOpts);
+		if(error){
+			console.log(error);
+			// response.send(false);
+		} else {
+			console.log(success);
+			// response.send(true);
+		}
+	});
+
 })
 app.listen(port, function(){
 	console.log("Channel "+port+" open for communication Captain.");

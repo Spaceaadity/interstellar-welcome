@@ -13,20 +13,17 @@ $(function() {
             // var phone = $("input#phone").val();
             var message = $("textarea#message").val();
             var firstName = name; // For Success/Failure Message
+            var E_data = {"name":name, "email":email, "message":message}
             // Check for white space in name for Success/Fail message
             if (firstName.indexOf(' ') >= 0) {
                 firstName = name.split(' ').slice(0, -1).join(' ');
             }
             $.ajax({
                 url: "/contact",
-                // url: "././server.js",
                 type: "POST",
-                data: {
-                    name: name,
-                    // phone: phone,
-                    email: email,
-                    message: message
-                },
+                data: JSON.stringify(E_data),
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
                 cache: false,
                 success: function() {
                     // Success message

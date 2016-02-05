@@ -27,6 +27,7 @@
     "ejs": "^2.4.1",
     "express": "^4.13.4",
     "nodemailer": "^2.1.0",
+    "nodemailer-smtp-transport": "^2.0.1",
     "pg": "^4.4.4",
     "twitter": "^1.2.5"
   }
