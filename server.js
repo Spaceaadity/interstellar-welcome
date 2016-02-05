@@ -14,47 +14,34 @@ app.get('/', function(request, response){
 });
 app.post('/contact', function(request, response){
 	// console.log(request.body);
-	var name = request.body.name;
-	var email = request.body.email;
-	var message = request.body.message;
-
-	var mailOpts,
-		transporter;
-
-	// transporter = nodemailer.createTransport(smtpTransport({
-	// 	service: 'gmail',
-	// 	auth: {
-	// 		user: '',
-	// 		pass: ''
-	// 	}
-	// }));
-	transporter = nodemailer.createTransport(smtpTransport({
+	var name = request.body.name
+	, email = request.body.email
+	, message = request.body.message;
+//couldn't figure out how to get AWS to let me send an email to me from another person who's address I have obviously not approved on my account - I'm sure there is something that will allow me to utilize this correctly but for now I am using this work around and it suits me just fine
+	var mailOpts = {
+		from: 'aadi.nickels@gmail.com',
+		to: 'aadi.nickels@gmail.com',
+		subject: name+"<"+email+">",
+		text: message,
+	};
+	var transporter = nodemailer.createTransport(smtpTransport({
 		host: "email-smtp.us-west-2.amazonaws.com",
 		port: 465,
-		// secure: true,
+		secure: true,
 		auth: {
-			user: '',
-			pass: ''
+			user: 'AKIAISKNG3VZXGJPGDQQ',
+			pass: 'Au+TiZ1fG2Lhems8KlWKjXOqsXUc3CGuoG4d1U+/aaGv'
 		}
 	}));
 
-	mailOpts = {
-		from: email,
-		to: 'aadi.nickels@gmail.com',
-		subject: name,
-		text: message,
-	};
-
-	transporter.sendMail(mailOpts, function(error, response){
-		// console.log(mailOpts);
+	transporter.sendMail(mailOpts, function(error, stat){
+		// console.log('in transporter');
 		if(error){
 			// console.log(error);
-			return false;
-			// response.end('error');
+			response.send(false);
 		} else {
-			// console.log(success);
-			return true;
-			// response.end('success');
+			// console.log(stat.response);
+			response.send(true);
 		}
 	});
 
