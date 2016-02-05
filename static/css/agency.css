@@ -1,3 +1,8 @@
+.readme{
+	background-color: white;
+	width:auto;
+	border-radius: 2px;
+}
 body{
 	overflow-x:hidden;
 	font-family:"Roboto Slab","Helvetica Neue",Helvetica,Arial,sans-serif;
